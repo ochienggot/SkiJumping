@@ -56,7 +56,7 @@ public class Jumper implements Comparable<Jumper> {
 		int number = 7;
 
 		number = 37 * number + this.name.hashCode();
-		number = 37 * number + this.points;
+		//number = 37 * number + this.points;
 
 		return number;
 	}
