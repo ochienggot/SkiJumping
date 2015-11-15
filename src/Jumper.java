@@ -38,9 +38,6 @@ public class Jumper implements Comparable<Jumper> {
 		return this.name + " (" + this.points + " points)";
 	}
 
-	/* In the end, this method is not necessary as Jumper class implements Comparator
-	interface so equals doesn't work as expectd. But why?
-	*/
 	@Override
 	public boolean equals(Object ob) {
 		if (ob instanceof Jumper) {
