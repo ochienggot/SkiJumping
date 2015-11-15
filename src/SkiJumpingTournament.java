@@ -45,9 +45,9 @@ public class SkiJumpingTournament {
 			decisionPoints = decisionPoints - Collections.min(jumpDecision.get(jumper)); 
 			sum += jumpersMap.get(jumper).get(getRoundNumber()-1) + decisionPoints;
 
-			// Why is equals not working???
+			// Why is equals not working??? => don't include points in hashCode()!
 			for (Jumper jmp : jumpersList) {
-				if (jmp.name().equals(jumper.name())) {
+				if (jmp.equals(jumper)) {
 					// Object references, must be the same
 					jmp.addPoints(sum);
 				}
@@ -98,7 +98,7 @@ public class SkiJumpingTournament {
 			System.out.print("            " + "jump lengths: ");
 
 			for (Jumper jumper : jumpersMap.keySet()) {
-				if (jumper.name().equals(jumpersList.get(i).name())) {
+				if (jumper.equals(jumpersList.get(i))) {
 					ArrayList<Integer> temp = jumpersMap.get(jumper);
 					int j;
 
